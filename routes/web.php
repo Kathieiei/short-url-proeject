@@ -14,9 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/','ShortLinkController@index');
 
-Route::get('/new','ShortLinkController@index');
-Route::post('/new','ShortLinkController@store');
+Route::get('/new','ShortLinkController@create');
+//Route::get('/new','ShortLinkController@index');
+Route::post('/save','ShortLinkController@store');
+Route::get('/gt/{code}','ShortLinkController@check');
 
 
 //Auth::routes();
